@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #2c5364, #00c6ff 90%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px 0;
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #00c6ff;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  padding: 40px 30px;
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 1.5em;
+  color: #b2f0ff;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1.5em;
+}
+
+.skill {
+  background: #00c6ff33;
+  border: 1px solid #00c6ff77;
+  border-radius: 12px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.skill:hover {
+  background: #00c6ff99;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px 0 rgba(0, 198, 255, 0.08);
+  padding: 24px 18px;
+  width: 280px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 #00c6ff44;
+}
+
+.project-tags span {
+  display: inline-block;
+  background: #00c6ff33;
+  color: #00c6ff;
+  border-radius: 8px;
+  padding: 2px 10px;
+  margin-right: 6px;
+  font-size: 0.85rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00c6ff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.timeline {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.experience-item {
+  margin-bottom: 24px;
+  padding-left: 10px;
+  border-left: 3px solid #00c6ff77;
+}
+
+.company {
+  color: #b2f0ff;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.btn,
+.btn-secondary {
+  display: inline-block;
+  margin: 10px 8px 0 8px;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 14px 0 #00c6ff44;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #0072ff;
+  border: 2px solid #00c6ff;
+}
+
+.btn:hover,
+.btn-secondary:hover {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+}
+
+footer {
+  margin-top: 40px;
+  padding: 24px 0 12px 0;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 20px 20px 0 0;
+}
+
+.social-links {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  color: #00c6ff;
+  margin: 0 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+p {
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container {
+    max-width: 95vw;
+    padding: 25px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .container {
+    padding: 18px 4px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
