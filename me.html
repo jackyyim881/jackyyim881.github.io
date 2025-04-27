@@ -1,0 +1,142 @@
+<!-- Example responsive CV intro section inspired by your screenshot -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hey, I'm Jacky</title>
+    <link href="styles2.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navigation">
+            <div class="logo">JY</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container card-list">
+
+        <div>
+            <span class="headline">Hey, I'm Jacky</span>
+            <span class="badge main">Available for hire</span>
+        </div>
+        <div class="desc">
+            Cloud Specialist & Web Application Enthusiast. Passionate about building scalable solutions and modern web
+            apps.
+        </div>
+
+        <div class="skills-matrix">
+            <div class="skills-title">Skills Matrix</div>
+            <div class="skill-bar-group">
+                <div class="skill-label">
+                    <span>AWS / Azure</span>
+                    <span>90%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:90%"></div>
+                </div>
+            </div>
+            <div class="skill-bar-group">
+                <div class="skill-label">
+                    <span>JavaScript / React</span>
+                    <span>85%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:85%"></div>
+                </div>
+            </div>
+            <div class="skill-bar-group">
+                <div class="skill-label">
+                    <span>Node.js</span>
+                    <span>80%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:80%"></div>
+                </div>
+            </div>
+            <div class="skill-bar-group">
+                <div class="skill-label">
+                    <span>DevOps / CI/CD</span>
+                    <span>75%</span>
+                </div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:75%"></div>
+                </div>
+            </div>
+            <!-- Badges -->
+            <div class="badges">
+                <span class="badge">Terraform</span>
+                <span class="badge">Python</span>
+                <span class="badge">SQL</span>
+                <span class="badge">Kubernetes</span>
+                <span class="badge">Nginx</span>
+            </div>
+            <!-- Languages -->
+            <div class="skills-title" style="margin-top:24px;">Languages</div>
+            <div class="languages">
+                <div class="lang-label">🇭🇰 Cantonese</div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:100%"></div>
+                </div>
+                <div class="lang-label">🇬🇧 English</div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:85%"></div>
+                </div>
+                <div class="lang-label">🇨🇳 Mandarin</div>
+                <div class="skill-bar-bg">
+                    <div class="skill-bar" style="width:80%"></div>
+                </div>
+            </div>
+            <!-- Soft Skills -->
+            <div class="skills-title" style="margin-top:24px;">Soft Skills</div>
+            <div class="soft-skills">
+                <span class="soft">Communication</span>
+                <span class="soft">Teamwork</span>
+                <span class="soft">Leadership</span>
+                <span class="soft">Problem-Solving</span>
+                <span class="soft">Time Management</span>
+                <span class="soft">Adaptability</span>
+            </div>
+        </div>
+    </div>
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Register ScrollTrigger plugin
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate each skill bar
+            gsap.utils.toArray(".skill-bar").forEach(bar => {
+                const percentage = bar.style.width;
+
+                gsap.set(bar, { width: 0 });
+
+                gsap.to(bar, {
+                    width: percentage,
+                    duration: 1.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: bar,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
