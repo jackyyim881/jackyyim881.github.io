@@ -78,17 +78,58 @@ header {
   color: #00c6ff;
 }
 
-.container {
-  background: rgba(0, 0, 0, 0.6);
+.cotainer-inner {
+  display: flex;
+  flex-direction: column;
+}
+.container-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  padding: 40px 30px;
-  max-width: 700px;
+  text-shadow: 0 2px 8px #00c6ff33;
+  max-width: 800px;
+  min-height: 100vh;
   margin: 40px auto;
   text-align: center;
   backdrop-filter: blur(6px);
 }
 
+a {
+  text-decoration: none !important;
+}
+
+.about-me-btn {
+  margin: 0 auto;
+  padding: 12px 28px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+  border: 2px solid #00c6ff;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 #00c6ff44;
+}
+
+.about-me-btn:visited {
+  color: #fff;
+}
+.about-me-btn:active {
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  box-shadow: 0 2px 6px 0 #0072ff66;
+}
+.container {
+  border-radius: 20px;
+  text-shadow: 0 2px 8px #00c6ff33;
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 40px auto;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
 h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5em;
@@ -278,6 +319,13 @@ p {
   text-shadow: 0 2px 8px #00c6ff33;
   margin-bottom: 1.2em;
   line-height: 1.7;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.4em;
+  color: #b2f0ff;
 }
 
 @media (max-width: 900px) {

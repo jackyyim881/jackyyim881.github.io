@@ -39,8 +39,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  background: #fff;
+  max-width: 1100px;
   border-radius: 18px;
   height: auto;
 
@@ -65,8 +64,9 @@ body {
 }
 
 .headline {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
+  color: white;
 }
 
 .badge {
@@ -76,11 +76,9 @@ body {
   border: 2px solid #7c3aed;
   box-shadow: 0 0 8px #7c3aed;
   animation: border-3d-pulse 3s infinite;
-
-  font-size: 0.85rem;
+  margin-left: 20px;
+  font-size: 14px;
   border-radius: 8px;
-  padding: 2px 10px;
-  margin-left: 8px;
   font-weight: 500;
   vertical-align: middle;
 }
@@ -97,9 +95,9 @@ body {
   }
 }
 .desc {
-  font-size: 1.05rem;
-  margin: 16px 0 20px 0;
-  color: #444;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
   line-height: 1.6;
 }
 
@@ -215,8 +213,8 @@ body {
 }
 
 .skills-matrix {
-  margin: 32px 0 0 0;
   padding: 24px;
+  width: 100%;
   background: #fff;
   border-radius: 16px;
 }
@@ -224,7 +222,7 @@ body {
 .skills-title {
   font-size: 1.15rem;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .skill-bar-group {
@@ -234,7 +232,8 @@ body {
 .skill-label {
   font-size: 1rem;
   font-weight: 500;
-  margin-bottom: 4px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -260,6 +259,11 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin: 12px 0 0 0;
+}
+
+.lang-label {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .badge,
