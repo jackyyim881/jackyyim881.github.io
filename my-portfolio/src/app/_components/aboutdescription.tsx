@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { CloudCog, Code, GitBranch } from "lucide-react";
 const hireReasons = [
   {
@@ -34,9 +35,13 @@ export default function AboutDescription() {
       <div className="space-y-8 ">
         {/* Focus Section */}
         <div className="flex flex-col items-center">
-          <Badge className="text-[18px] lg:w-1/4  border-gray-500 border-4  rounded-4xl p-3 font-semibold flex items-center relative">
-            My Focus
-          </Badge>
+          <HoverBorderGradient
+            containerClassName="rounded-full"
+            as="button"
+            className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+          >
+            <span>My Focus</span>
+          </HoverBorderGradient>
         </div>
         <div>
           <p className="mb-4 p-6 mt-[50px] text-[28px] leading-[1.5]  font-medium  ">

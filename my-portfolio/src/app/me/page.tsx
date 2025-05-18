@@ -29,6 +29,7 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import TextPlugin from "gsap/dist/TextPlugin";
 import { Button } from "@/lib/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { SkillRadarChart } from "../_components/SkillRadarChart";
 
 // Azure's primary colors
 const AZURE_BLUE = "#0078d4";
@@ -352,18 +353,7 @@ export default function Home() {
           style={{ opacity, scale, y }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <div className="azure-cloud-presence opacity-0 scale-90 absolute w-96 h-96 transform -translate-y-16">
-            <Canvas camera={{ position: [0, 0, 5] }}>
-              <ambientLight intensity={0.5} />
-              <directionalLight position={[10, 10, 5]} intensity={1} />
-              <CloudMesh />
-              <OrbitControls
-                enableZoom={false}
-                autoRotate
-                autoRotateSpeed={0.5}
-              />
-            </Canvas>
-          </div>
+          <div className="azure-cloud-presence opacity-0 scale-90 absolute w-96 h-96 transform -translate-y-16"></div>
         </motion.div>
 
         <div className="container mx-auto px-4 z-10 mt-40 md:mt-0">
@@ -395,23 +385,14 @@ export default function Home() {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#0078d4] to-[#50e6ff]">
                   Available for hire →
                 </span>
-                <span className="absolute -bottom-0 left-[42.125rem] h-[4px] w-[calc(10%-0.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover/btn:opacity-40"></span>
               </Button>
-            </div>
-
-            <div className="absolute left-1/2 transform -translate-x-1/2 -mt-[-20px] animate-bounce">
-              <div className="w-6 h-10 rounded-full border-2 border-gray-700 dark:border-gray-300 flex justify-center items-start p-1">
-                <div className="w-1.5 h-1.5 bg-gray-700 dark:bg-gray-300 rounded-full animate-pulse-slow"></div>
-              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Interactive Skills Matrix Section */}
-      <div className="absolute inset-0">
-        <DataVizualizationShader />
-      </div>
+      <div className="absolute inset-0"></div>
       <section
         ref={skillsRef}
         className="relative px-4 py-20 sm:px-6 lg:px-8 max-w-7xl mx-auto"
@@ -441,22 +422,23 @@ export default function Home() {
               className="w-32 h-1.5 bg-gradient-to-r from-[#0078d4] to-[#50e6ff] rounded-full mx-auto"
             />
           </div>
-          <Card className="relative overflow-hidden rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-xl dark:bg-gray-900/40 dark:border-blue-500/10 p-8 sm:p-10 md:p-12">
+          <Card className="relative overflow-hidden rounded-3xl   dark:bg-gray-900/40 dark:border-blue-500/10 p-8 sm:p-10 md:p-12">
             <div className="relative z-10">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-16"
+                className="grid grid-cols-1 lg:grid-cols-1 gap-16"
               >
                 {/* Cloud & Technical Skills */}
                 <div>
-                  <div className="flex items-center gap-3 mb-8">
+                  <div className="flex relative items-center gap-3 mb-8">
                     <Cloud className="w-6 h-6 text-[#0078d4]" />
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                       Cloud & Technical
                     </h3>
+                    <span className="w-full absolute mt-12 h-[1px] bg-gradient-to-r from-[#0078d4] to-[#50e6ff] rounded-full"></span>
                   </div>
 
                   <div className="space-y-6">
@@ -531,6 +513,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                       Development
                     </h3>
+                    <span className="w-full absolute mt-12 h-[1px] bg-gradient-to-r from-[#0078d4] to-[#50e6ff] rounded-full"></span>
                   </div>
 
                   <div className="space-y-6">
@@ -577,6 +560,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                       Languages
                     </h3>
+                    <span className="w-full absolute mt-12 h-[1px] bg-gradient-to-r from-[#0078d4] to-[#50e6ff] rounded-full"></span>
                   </div>
 
                   <div className="space-y-6">
@@ -606,7 +590,7 @@ export default function Home() {
                     </h3>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 relative perspective-500">
+                  <div className="grid grid-cols-2 sm:grid-cols-2  gap-3 relative perspective-500">
                     {[
                       "Communication",
                       "Leadership",
@@ -628,7 +612,7 @@ export default function Home() {
                         className="group relative rounded-xl bg-gradient-to-r from-[#0078d4]/10 to-transparent hover:from-[#0078d4]/20 border border-blue-200/30 dark:border-blue-500/20 overflow-hidden"
                       >
                         <div className="absolute inset-0 bg-grid-pattern opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
-                        <div className="p-4 sm:p-5 relative">
+                        <div className="p-4  relative">
                           <p className="text-base font-medium text-center text-gray-900 dark:text-white">
                             {skill}
                           </p>

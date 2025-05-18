@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { experience, ExpItem } from "../data/experience";
-import { motion } from "framer-motion";
 import { BriefcaseBusiness, Calendar, Building2 } from "lucide-react";
 
 export default function Experience() {
@@ -14,7 +13,7 @@ export default function Experience() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-[#828182] to-[#000000] mb-3">
+          <h2 className="text-4xl font-bold tracking-tight  bg-white dark:from-[#f6f6f7] text-shadow-2xs dark:text-shadow-2xs dark:to-[#aea4a4] dark:bg-clip-text dark:text-transparent mb-3">
             Professional Experience
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-[#828182] to-[#000000] rounded-full" />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Code, CloudCog } from "lucide-react";
 
+import { cn } from "@/lib/utils";
 const skillGroups = [
   {
     category: "Cloud & Infrastructure",
@@ -21,15 +22,15 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="flex min-h-screen w-full items-center justify-center bg-gradient-to-b from-background to-background/95 px-4 py-24 md:py-32"
+      className="flex min-h-screen w-full  items-center  justify-center bg-gradient-to-b from-background to-background/95 px-4 py-24 md:py-32"
     >
       <div className="container mx-auto max-w-4xl">
-        <div className="flex flex-col items-center justify-center space-y-8 text-center">
-          <h1 className="text-3xl  font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+        <div className="flex flex-col  items-center justify-center space-y-8 text-center">
+          <h1 className="text-3xl  z-100 text-shadow-2xs dark:text-shadow-2xs font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Jacky Yim
           </h1>
 
-          <h2 className="text-xl font-medium text-foreground/80 md:text-2xl">
+          <h2 className="text-xl  z-100 text-shadow-2xs dark:text-shadow-2xs font-medium text-foreground/80 md:text-2xl">
             Cloud Specialist & Web Application Enthusiast
           </h2>
 
