@@ -1,6 +1,6 @@
 "use client";
 
-import { Card, CardHeader } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
 
 // Tech icons with Azure services prioritized first - following Azure naming conventions

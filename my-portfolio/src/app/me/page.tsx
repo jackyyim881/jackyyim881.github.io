@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -13,15 +14,6 @@ import {
   Server,
 } from "lucide-react";
 import Link from "next/link";
-import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  Sphere,
-  MeshDistortMaterial,
-  OrbitControls,
-  Float,
-  Text3D,
-} from "@react-three/drei";
 
 // Import GSAP for advanced animations
 import gsap from "gsap";
@@ -29,120 +21,9 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import TextPlugin from "gsap/dist/TextPlugin";
 import { Button } from "@/lib/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { SkillRadarChart } from "../_components/SkillRadarChart";
 
 // Azure's primary colors
 const AZURE_BLUE = "#0078d4";
-const AZURE_CYAN = "#50e6ff";
-
-// 3D Cloud Component
-function CloudMesh() {
-  const mesh = useRef(null);
-  useFrame(() => {
-    if (mesh.current) {
-      mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
-    }
-  });
-
-  return (
-    <Float speed={1.75} rotationIntensity={0.4} floatIntensity={0.4}>
-      <Sphere ref={mesh} args={[1.5, 24, 24]} position={[0, 0, 0]} castShadow>
-        <MeshDistortMaterial
-          color={AZURE_BLUE}
-          attach="material"
-          distort={0.4}
-          speed={1.5}
-          roughness={0.5}
-          metalness={0.8}
-          opacity={0.8}
-          transparent
-        />
-      </Sphere>
-    </Float>
-  );
-}
-
-// Data visualization using custom WebGL shader
-function DataVizualizationShader() {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      canvas.clientWidth / canvas.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
-
-    // Create particles for Azure cloud visualization
-    const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 5000;
-
-    const posArray = new Float32Array(particlesCount * 3);
-    for (let i = 0; i < particlesCount * 3; i++) {
-      posArray[i] = (Math.random() - 0.5) * 10;
-    }
-
-    particlesGeometry.setAttribute(
-      "position",
-      new THREE.BufferAttribute(posArray, 3)
-    );
-
-    // Azure-inspired shader material
-    const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.02,
-      color: new THREE.Color(AZURE_BLUE),
-      transparent: true,
-      opacity: 0.8,
-      blending: THREE.AdditiveBlending,
-    });
-
-    // Create the particle system
-    const particlesMesh = new THREE.Points(
-      particlesGeometry,
-      particlesMaterial
-    );
-    scene.add(particlesMesh);
-
-    // Animation
-    function animate() {
-      requestAnimationFrame(animate);
-
-      particlesMesh.rotation.x += 0.0003;
-      particlesMesh.rotation.y += 0.0005;
-
-      renderer.render(scene, camera);
-    }
-
-    animate();
-
-    // Handle resize
-    const handleResize = () => {
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      camera.updateProjectionMatrix();
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      renderer.dispose();
-    };
-  }, []);
-
-  return (
-    <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
-  );
-}
 
 // Interactive skill bar that reacts to hover
 function InteractiveSkillBar({ skill, percentage, color = AZURE_BLUE }: any) {
@@ -215,7 +96,6 @@ export default function Home() {
     "Full Stack Developer",
     "Cloud Infrastructure Expert",
   ];
-  const [typingIndex, setTypingIndex] = useState(0);
 
   // Register GSAP plugins
   useEffect(() => {
@@ -269,7 +149,7 @@ export default function Home() {
     // Skill bars animation with ScrollTrigger
     const bars = document.querySelectorAll(".skill-bar-fill");
     bars.forEach((bar) => {
-      const percent = bar.getAttribute("data-percentage");
+      const percent = bar.getAttribute("data-percentage") || "0%";
 
       gsap.fromTo(
         bar,

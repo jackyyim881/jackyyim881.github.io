@@ -71,20 +71,6 @@ export default function Experience() {
                           {e.detail}
                         </p>
                       </div>
-
-                      {/* Skills/Tags */}
-                      {e.skills && (
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {e.skills.map((skill) => (
-                            <span
-                              key={skill}
-                              className="text-xs px-2.5 py-1 rounded-full bg-[#0078d4]/10 text-[#0078d4] border border-[#0078d4]/20"
-                            >
-                              {skill}
-                            </span>
-                          ))}
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>

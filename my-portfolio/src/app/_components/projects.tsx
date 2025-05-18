@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -30,15 +30,6 @@ export default function Projects() {
             key={project.title}
             className="overflow-hidden border border-border/40 bg-white/5 backdrop-blur-sm hover:border-primary/20 transition-all duration-300"
           >
-            {project.image && (
-              <div className="relative h-48 w-full overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-            )}
             <CardHeader>
               <CardTitle className="text-xl font-semibold">
                 {project.title}
@@ -76,18 +67,6 @@ export default function Projects() {
                 >
                   View Project
                   <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-foreground/70 hover:text-foreground transition-colors"
-                >
-                  Code
-                  <Github className="h-4 w-4" />
                 </a>
               )}
             </CardFooter>

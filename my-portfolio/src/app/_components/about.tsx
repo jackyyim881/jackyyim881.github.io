@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Code, CloudCog } from "lucide-react";
 
-import { cn } from "@/lib/utils";
 const skillGroups = [
   {
     category: "Cloud & Infrastructure",
