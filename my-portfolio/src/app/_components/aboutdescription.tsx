@@ -27,61 +27,60 @@ const hireReasons = [
 
 export default function AboutDescription() {
   return (
-    <section
-      id="about-description"
-      className="max-w-4xl mx-auto my-20 p-8 bg-white/10  rounded-xl "
-    >
-      <div className="space-y-8 ">
-        {/* Focus Section */}
-        <div className="flex flex-col items-center">
-          <HoverBorderGradient
-            containerClassName="rounded-full"
-            as="button"
-            className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
-          >
-            <span>My Focus</span>
-          </HoverBorderGradient>
-        </div>
-        <div>
-          <p className="mb-4 p-6 mt-[50px] text-[28px] leading-[1.5]  font-medium  ">
-            Passionate about building scalable cloud solutions and modern web
-            applications. I specialize in cloud architecture, DevOps practices,
-            and web development. My goal is to create efficient, reliable, and
-            user-friendly applications that meet the needs of businesses and
-            users alike.
-          </p>
-        </div>
+    <section id="about-description" className="max-w-4xl mx-auto my-20 p-8    ">
+      <div className="flex flex-col items-center">
+        <HoverBorderGradient
+          containerClassName="rounded-full"
+          as="button"
+          className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2"
+        >
+          <span>My Focus</span>
+        </HoverBorderGradient>
+      </div>
+      <Card className="space-y-8 mt-5 rounded-xl">
+        <p className="mb-4 p-6  text-[28px] leading-[1.5]  font-medium  ">
+          Passionate about building scalable cloud solutions and modern web
+          applications. I specialize in cloud architecture, DevOps practices,
+          and web development. My goal is to create efficient, reliable, and
+          user-friendly applications that meet the needs of businesses and users
+          alike.
+        </p>
+      </Card>
+      <div className="mt-[100px]">
+        <Card className="space-y-8 mt-5 rounded-xl ">
+          {/* Why Hire Me Section */}
+          <div className="space-y-6 p-4 ">
+            <div className="flex items-center justify-center sm:justify-start mb-6">
+              <h3 className="text-3xl font-semibold flex items-center">
+                <div className="w-1 h-8 bg-primary rounded-full mr-3"></div>
+                Why Hire Me
+              </h3>
+            </div>
 
-        {/* Why Hire Me Section */}
-        <div className="space-y-6 mt-[150px]">
-          <div className="flex items-center justify-center sm:justify-start mb-6">
-            <h3 className="text-3xl font-semibold flex items-center">
-              <div className="w-1 h-8 bg-primary rounded-full mr-3"></div>
-              Why Hire Me
-            </h3>
+            <div className="grid gap-4   mt-5 leading-1.5 lg:grid-cols-2">
+              {hireReasons.map((item, i) => (
+                <Card
+                  key={i}
+                  className="group bg-white/5 backdrop-blur-sm  transition-all duration-300"
+                >
+                  <CardHeader className="pb-2">
+                    <div className="gap-2">
+                      {item.icon}
+                      <CardTitle className="text-lg mt-5">
+                        {item.text}
+                      </CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-foreground/70">
+                      {item.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-
-          <div className="grid gap-4   mt-5 leading-1.5 lg:grid-cols-2">
-            {hireReasons.map((item, i) => (
-              <Card
-                key={i}
-                className="group bg-white/5 backdrop-blur-sm  transition-all duration-300"
-              >
-                <CardHeader className="pb-2">
-                  <div className="gap-2">
-                    {item.icon}
-                    <CardTitle className="text-lg mt-5">{item.text}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-foreground/70">
-                    {item.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

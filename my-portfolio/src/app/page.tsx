@@ -17,7 +17,7 @@ export default function Home() {
         alt="Background Image"
         width={100}
         height={100}
-        className="absolute inset-0 z-0 h-[100%] mask-b-from-20% mask-b-to-80%  w-full object-cover opacity-20"
+        className="absolute inset-0 z-0 h-[100%] mask-b-from-20% mask-b-to-80%  w-full object-cover opacity-20 pointer-events-none select-none"
       />
       <HeaderSection />
       <main className="space-y-0 ">

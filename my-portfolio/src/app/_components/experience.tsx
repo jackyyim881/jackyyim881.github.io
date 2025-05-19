@@ -13,13 +13,13 @@ export default function Experience() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight  bg-white dark:from-[#f6f6f7] text-shadow-2xs dark:text-shadow-2xs dark:to-[#aea4a4] dark:bg-clip-text dark:text-transparent mb-3">
+          <h2 className="text-4xl font-bold tracking-tight text-center  bg-white dark:from-[#f6f6f7] text-shadow-2xs dark:text-shadow-2xs dark:to-[#aea4a4] dark:bg-clip-text dark:text-transparent mb-3">
             Professional Experience
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-[#828182] to-[#000000] rounded-full" />
         </div>
 
-        <div className="relative pl-8 md:pl-0">
+        <div className="relative  md:pl-0">
           {/* Timeline line */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-[#0078d4]/80 to-[#50e6ff]/50" />
 
@@ -48,7 +48,7 @@ export default function Experience() {
                 <div className="md:col-span-3 relative">
                   {/* Mobile timeline dot */}
 
-                  <div className="ml-8 md:ml-0 pl-6 md:pl-8 py-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[#0078d4]/10 hover:border-[#0078d4]/20">
+                  <div className=" md:ml-0 pl-6 md:pl-8 py-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-xl transition-all duration-300 hover:shadow-[#0078d4]/10 hover:border-[#0078d4]/20">
                     <div className="flex flex-col space-y-4">
                       <div>
                         {/* Role */}
